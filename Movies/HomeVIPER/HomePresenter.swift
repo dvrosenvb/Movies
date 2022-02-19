@@ -17,14 +17,6 @@ class HomePresenter: ViewToPresenterProtocolHome {
     var interactor: PresenterToInteractorProtocol?
     var router: PresenterToRouterProtocolHome?
     
-    func startFetchingCHaracter(idCharacter: Int) {
-        
-    }
-    
-    func showCharacterProfile(navigationController: UINavigationController) {
-        
-    }
-    
 }
 
 extension HomePresenter:InteractorToPresenterProtocolHome{

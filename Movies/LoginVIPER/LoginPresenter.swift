@@ -8,31 +8,35 @@
 import UIKit
 
 class LoginPresenter: ViewToPresenterProtocolLogin {
-    func launchHome(navigationController: UINavigationController) {
-        router?.pushToHome(navigationController: navigationController)
-    }
-        
+  
+
     var view:PresenterToViewProtocolLogin?
     var interactor: PresenterToInteractorProtocolLogin?
     var router: PresenterToRouterProtocolLogin?
     
-    func startFetchingCHaracter(idCharacter: Int) {
-        
+    func tryLogin(user: String, passsword: String) {
+        interactor?.sessionLogin(user: user, password: passsword)
     }
     
-    func showCharacterProfile(navigationController: UINavigationController) {
-        router?.pushToInfoDetail(navigationController: navigationController)
+    func logout() {
+        interactor?.sessionLogOut()
     }
     
+    
+    func launchHome(navigationController: UINavigationController) {
+        router?.pushToHome(navigationController: navigationController)
+    }
 }
 
 extension LoginPresenter:InteractorToPresenterProtocolLogin{
+    func loginSucceded(info:String) {
+        view?.loginSucceded(info: info)
+    }
     
-    
-    func infoCharFetchedFailed() {}
-    
-    
-    
+    func loginFailed(info:String) {
+        view?.loginFailed(info: info)
+    }
+     
 }
 
 
