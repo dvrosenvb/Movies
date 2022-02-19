@@ -1,8 +1,7 @@
 
-# Movies
-## _From The Movie DB 📽_ 
+# Movies 📽
 
-## Features
+### Features
 
 - Firebase Auth
 - UIAlert
