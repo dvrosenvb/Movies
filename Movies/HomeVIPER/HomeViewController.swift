@@ -42,18 +42,15 @@ class HomeViewController: UIViewController {
         
         // Create the actions.
         let cancelAction = UIAlertAction(title: cancelButtonTitle, style: .cancel) { _ in
-            Swift.debugPrint("Hide Contextual Menu")
         }
         
         let destructiveAction = UIAlertAction(title: viewProfileTitle, style: .default) { _ in
-            Swift.debugPrint("OpenProfile")
             let vc = Profile()
             vc.modalPresentationStyle = .popover
             self.present(vc, animated: true, completion: nil)
         }
         
         let destructiveAction1 = UIAlertAction(title: destructiveButtonTitle, style: .destructive) { _ in
-            Swift.debugPrint("GoLogin - Action:Logout ... kill token/s")
             guard let nc = self.navigationController else { return }
             self.title = " "
             self.presenter?.rToLogin(navigationController: nc)
@@ -95,7 +92,7 @@ class Profile: UIViewController {
     
     lazy var lblUser: UILabel = {
         let label = UILabel()
-        label.text = UIManager.userName
+        label.text = Constants.USER_EMAIL
         label.font = UIManager.RegularFont(14)
         label.textColor = UIManager.BASIC_WHITE
         label.numberOfLines = 0

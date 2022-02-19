@@ -47,7 +47,8 @@ class LoginViewController: UIViewController {
         tf.layer.backgroundColor = UIManager.BASIC_WHITE.cgColor
         tf.layer.cornerRadius = UIManager.cornerRadiusBtn
         
-        tf.font = UIManager.RegularFont(20)
+        tf.font = UIManager.RegularFont(18)
+        tf.keyboardType = .emailAddress
         tf.returnKeyType = .next
         tf.placeholder = UIManager.txtPlaceholderUserName
         
@@ -73,7 +74,7 @@ class LoginViewController: UIViewController {
         tf.layer.backgroundColor = UIManager.BASIC_WHITE.cgColor
         tf.layer.cornerRadius = UIManager.cornerRadiusBtn
         
-        tf.font = UIManager.RegularFont(20)
+        tf.font = UIManager.RegularFont(18)
         tf.returnKeyType = .next
         tf.placeholder = UIManager.txtPlaceholderPassword
         
@@ -100,6 +101,12 @@ class LoginViewController: UIViewController {
         return label
     }()
     
+    lazy var viewLoaderContainer : UIView = {
+        let view = UIView()
+        view.backgroundColor = UIManager.BASIC_SOFT_DARK
+        view.layer.cornerRadius = UIManager.cornerRadiusBtn
+        return view
+    }()
     
     
     //MARK: Lifecycle
@@ -110,6 +117,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.logout()
         installView()
     }
     
@@ -177,6 +185,10 @@ class LoginViewController: UIViewController {
         
         tfUserName.addTarget(self, action: #selector(primaryActionTrigeredTfUserName), for: .primaryActionTriggered)
         tfPassword.addTarget(self, action: #selector(primaryActionTrigeredTfPassword), for: .primaryActionTriggered)
+        tfUserName.addTarget(self, action: #selector(startEditingUsername), for: .editingDidBegin)
+        tfPassword.addTarget(self, action: #selector(startEditingPassword), for: .editingDidBegin)
+        
+        
         
         btnLogin.addTarget(self, action: #selector(actionLogin), for: .touchUpInside)
         
@@ -184,6 +196,26 @@ class LoginViewController: UIViewController {
         let tapOutside = UITapGestureRecognizer(target: self, action: #selector(primaryActionTrigeredTfPassword))
         
         view.addGestureRecognizer(tapOutside)
+    }
+    
+    func showLoader()  {
+        viewLoaderContainer.removeFromSuperview()
+        let mediumH = ((view.frame.height / 2) - 75)
+        let mediumW = ((view.frame.width / 2) - 75)
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: mediumW, y: mediumH, width: 150, height: 150))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.large
+        loadingIndicator.startAnimating();
+        viewLoaderContainer.addSubview(loadingIndicator)
+        view.addSubview(viewLoaderContainer)
+        viewLoaderContainer.snp.makeConstraints { make in
+            make.centerX.centerY.equalToSuperview()
+            make.height.width.equalToSuperview()
+        }
+    }
+    
+    func removeLoader()  {
+        viewLoaderContainer.removeFromSuperview()
     }
     
     //MARK: Actions
@@ -195,7 +227,38 @@ class LoginViewController: UIViewController {
         view.endEditing(true)
     }
     
+    @objc func startEditingUsername(){
+        lblStatus.text = " "
+    }
+    
+    @objc func startEditingPassword(){
+        lblStatus.text = " "
+    }
+    
     @objc func actionLogin(){
+        showLoader()
+        guard let user = tfUserName.text,
+              let password = tfPassword.text else { return }
+        
+        presenter?.tryLogin(user: user, passsword: password)
+    }
+    
+    
+    
+}
+
+extension LoginViewController:PresenterToViewProtocolLogin{
+    func loginFailed(info: String) {
+        removeLoader()
+        lblStatus.text = info
+        tfPassword.text = ""
+        tfUserName.text = ""
+    }
+    
+    func loginSucceded(info: String) {
+        removeLoader()
+        guard let user = tfUserName.text else { return }
+        Constants.USER_EMAIL = String(user).lowercased()
         guard let nc = self.navigationController else { return }
         title = " "
         nc.navigationBar.isHidden = false
@@ -203,6 +266,4 @@ class LoginViewController: UIViewController {
     }
     
     
-    
 }
-

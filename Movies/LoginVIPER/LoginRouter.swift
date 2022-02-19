@@ -20,7 +20,7 @@ class LoginRouter: PresenterToRouterProtocolLogin {
         let router:PresenterToRouterProtocolLogin = LoginRouter()
         
         view.presenter = presenter
-        presenter.view = view as? PresenterToViewProtocolLogin
+        presenter.view = view
         presenter.router = router
         presenter.interactor = interactor
         interactor.presenter = presenter
