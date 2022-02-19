@@ -9,23 +9,50 @@
 /* Begin PBXBuildFile section */
 		6DFF9F9927C086D200F2B645 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF9F9827C086D200F2B645 /* AppDelegate.swift */; };
 		6DFF9F9B27C086D200F2B645 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF9F9A27C086D200F2B645 /* SceneDelegate.swift */; };
-		6DFF9F9D27C086D200F2B645 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF9F9C27C086D200F2B645 /* ViewController.swift */; };
-		6DFF9FA027C086D200F2B645 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DFF9F9E27C086D200F2B645 /* Main.storyboard */; };
 		6DFF9FA327C086D200F2B645 /* Movies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF9FA127C086D200F2B645 /* Movies.xcdatamodeld */; };
 		6DFF9FA527C086D400F2B645 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DFF9FA427C086D400F2B645 /* Assets.xcassets */; };
 		6DFF9FA827C086D400F2B645 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DFF9FA627C086D400F2B645 /* LaunchScreen.storyboard */; };
+		6DFF9FB127C0876400F2B645 /* UIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF9FB027C0876400F2B645 /* UIManager.swift */; };
+		6DFF9FB427C087B900F2B645 /* Manrope.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6DFF9FB327C087B900F2B645 /* Manrope.ttf */; };
+		6DFF9FB727C08D0A00F2B645 /* EntryPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF9FB627C08D0A00F2B645 /* EntryPoint.swift */; };
+		6DFF9FBF27C08D6A00F2B645 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF9FB927C08D6A00F2B645 /* LoginViewController.swift */; };
+		6DFF9FC027C08D6A00F2B645 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF9FBA27C08D6A00F2B645 /* LoginInteractor.swift */; };
+		6DFF9FC127C08D6A00F2B645 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF9FBB27C08D6A00F2B645 /* LoginPresenter.swift */; };
+		6DFF9FC227C08D6A00F2B645 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF9FBC27C08D6A00F2B645 /* LoginProtocols.swift */; };
+		6DFF9FC327C08D6A00F2B645 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF9FBD27C08D6A00F2B645 /* LoginRouter.swift */; };
+		6DFF9FC427C08D6A00F2B645 /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF9FBE27C08D6A00F2B645 /* LoginEntity.swift */; };
+		6DFF9FC727C08E1C00F2B645 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6DFF9FC627C08E1C00F2B645 /* SnapKit */; };
+		6DFF9FCF27C0A44F00F2B645 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF9FC927C0A44E00F2B645 /* HomePresenter.swift */; };
+		6DFF9FD027C0A44F00F2B645 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF9FCA27C0A44E00F2B645 /* HomeProtocols.swift */; };
+		6DFF9FD127C0A44F00F2B645 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF9FCB27C0A44E00F2B645 /* HomeViewController.swift */; };
+		6DFF9FD227C0A44F00F2B645 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF9FCC27C0A44E00F2B645 /* HomeRouter.swift */; };
+		6DFF9FD327C0A44F00F2B645 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF9FCD27C0A44E00F2B645 /* HomeInteractor.swift */; };
+		6DFF9FD427C0A44F00F2B645 /* HomeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF9FCE27C0A44E00F2B645 /* HomeEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6DFF9F9527C086D200F2B645 /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DFF9F9827C086D200F2B645 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DFF9F9A27C086D200F2B645 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6DFF9F9C27C086D200F2B645 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6DFF9F9F27C086D200F2B645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DFF9FA227C086D200F2B645 /* Movies.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Movies.xcdatamodel; sourceTree = "<group>"; };
 		6DFF9FA427C086D400F2B645 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DFF9FA727C086D400F2B645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DFF9FA927C086D400F2B645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DFF9FB027C0876400F2B645 /* UIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIManager.swift; sourceTree = "<group>"; };
+		6DFF9FB327C087B900F2B645 /* Manrope.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Manrope.ttf; sourceTree = "<group>"; };
+		6DFF9FB627C08D0A00F2B645 /* EntryPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryPoint.swift; sourceTree = "<group>"; };
+		6DFF9FB927C08D6A00F2B645 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6DFF9FBA27C08D6A00F2B645 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		6DFF9FBB27C08D6A00F2B645 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		6DFF9FBC27C08D6A00F2B645 /* LoginProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		6DFF9FBD27C08D6A00F2B645 /* LoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		6DFF9FBE27C08D6A00F2B645 /* LoginEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
+		6DFF9FC927C0A44E00F2B645 /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		6DFF9FCA27C0A44E00F2B645 /* HomeProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		6DFF9FCB27C0A44E00F2B645 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6DFF9FCC27C0A44E00F2B645 /* HomeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		6DFF9FCD27C0A44E00F2B645 /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		6DFF9FCE27C0A44E00F2B645 /* HomeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DFF9FC727C08E1C00F2B645 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,16 +86,61 @@
 		6DFF9F9727C086D200F2B645 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				6DFF9FB827C08D4300F2B645 /* LoginVIPER */,
+				6DFF9FC827C0A2B000F2B645 /* HomeVIPER */,
+				6DFF9FB227C0879800F2B645 /* Fonts */,
+				6DFF9FAF27C0874600F2B645 /* Utilities */,
+				6DFF9FB627C08D0A00F2B645 /* EntryPoint.swift */,
 				6DFF9F9827C086D200F2B645 /* AppDelegate.swift */,
 				6DFF9F9A27C086D200F2B645 /* SceneDelegate.swift */,
-				6DFF9F9C27C086D200F2B645 /* ViewController.swift */,
-				6DFF9F9E27C086D200F2B645 /* Main.storyboard */,
 				6DFF9FA427C086D400F2B645 /* Assets.xcassets */,
 				6DFF9FA627C086D400F2B645 /* LaunchScreen.storyboard */,
 				6DFF9FA927C086D400F2B645 /* Info.plist */,
 				6DFF9FA127C086D200F2B645 /* Movies.xcdatamodeld */,
 			);
 			path = Movies;
+			sourceTree = "<group>";
+		};
+		6DFF9FAF27C0874600F2B645 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6DFF9FB027C0876400F2B645 /* UIManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		6DFF9FB227C0879800F2B645 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6DFF9FB327C087B900F2B645 /* Manrope.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6DFF9FB827C08D4300F2B645 /* LoginVIPER */ = {
+			isa = PBXGroup;
+			children = (
+				6DFF9FBE27C08D6A00F2B645 /* LoginEntity.swift */,
+				6DFF9FB927C08D6A00F2B645 /* LoginViewController.swift */,
+				6DFF9FBA27C08D6A00F2B645 /* LoginInteractor.swift */,
+				6DFF9FBB27C08D6A00F2B645 /* LoginPresenter.swift */,
+				6DFF9FBC27C08D6A00F2B645 /* LoginProtocols.swift */,
+				6DFF9FBD27C08D6A00F2B645 /* LoginRouter.swift */,
+			);
+			path = LoginVIPER;
+			sourceTree = "<group>";
+		};
+		6DFF9FC827C0A2B000F2B645 /* HomeVIPER */ = {
+			isa = PBXGroup;
+			children = (
+				6DFF9FCE27C0A44E00F2B645 /* HomeEntity.swift */,
+				6DFF9FCB27C0A44E00F2B645 /* HomeViewController.swift */,
+				6DFF9FCD27C0A44E00F2B645 /* HomeInteractor.swift */,
+				6DFF9FC927C0A44E00F2B645 /* HomePresenter.swift */,
+				6DFF9FCA27C0A44E00F2B645 /* HomeProtocols.swift */,
+				6DFF9FCC27C0A44E00F2B645 /* HomeRouter.swift */,
+			);
+			path = HomeVIPER;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +159,9 @@
 			dependencies = (
 			);
 			name = Movies;
+			packageProductDependencies = (
+				6DFF9FC627C08E1C00F2B645 /* SnapKit */,
+			);
 			productName = Movies;
 			productReference = 6DFF9F9527C086D200F2B645 /* Movies.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +190,9 @@
 				Base,
 			);
 			mainGroup = 6DFF9F8C27C086D200F2B645;
+			packageReferences = (
+				6DFF9FC527C08E1C00F2B645 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 6DFF9F9627C086D200F2B645 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -130,7 +209,7 @@
 			files = (
 				6DFF9FA827C086D400F2B645 /* LaunchScreen.storyboard in Resources */,
 				6DFF9FA527C086D400F2B645 /* Assets.xcassets in Resources */,
-				6DFF9FA027C086D200F2B645 /* Main.storyboard in Resources */,
+				6DFF9FB427C087B900F2B645 /* Manrope.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,9 +220,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DFF9F9D27C086D200F2B645 /* ViewController.swift in Sources */,
+				6DFF9FC327C08D6A00F2B645 /* LoginRouter.swift in Sources */,
+				6DFF9FC127C08D6A00F2B645 /* LoginPresenter.swift in Sources */,
+				6DFF9FB127C0876400F2B645 /* UIManager.swift in Sources */,
+				6DFF9FD127C0A44F00F2B645 /* HomeViewController.swift in Sources */,
+				6DFF9FB727C08D0A00F2B645 /* EntryPoint.swift in Sources */,
+				6DFF9FBF27C08D6A00F2B645 /* LoginViewController.swift in Sources */,
+				6DFF9FD327C0A44F00F2B645 /* HomeInteractor.swift in Sources */,
+				6DFF9FD427C0A44F00F2B645 /* HomeEntity.swift in Sources */,
+				6DFF9FC227C08D6A00F2B645 /* LoginProtocols.swift in Sources */,
+				6DFF9FD227C0A44F00F2B645 /* HomeRouter.swift in Sources */,
+				6DFF9FCF27C0A44F00F2B645 /* HomePresenter.swift in Sources */,
 				6DFF9F9927C086D200F2B645 /* AppDelegate.swift in Sources */,
+				6DFF9FC427C08D6A00F2B645 /* LoginEntity.swift in Sources */,
+				6DFF9FD027C0A44F00F2B645 /* HomeProtocols.swift in Sources */,
 				6DFF9FA327C086D200F2B645 /* Movies.xcdatamodeld in Sources */,
+				6DFF9FC027C08D6A00F2B645 /* LoginInteractor.swift in Sources */,
 				6DFF9F9B27C086D200F2B645 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,14 +243,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6DFF9F9E27C086D200F2B645 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6DFF9F9F27C086D200F2B645 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6DFF9FA627C086D400F2B645 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -298,9 +382,9 @@
 				INFOPLIST_FILE = Movies/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +394,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -326,9 +410,9 @@
 				INFOPLIST_FILE = Movies/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -338,7 +422,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -364,6 +448,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6DFF9FC527C08E1C00F2B645 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6DFF9FC627C08E1C00F2B645 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6DFF9FC527C08E1C00F2B645 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		6DFF9FA127C086D200F2B645 /* Movies.xcdatamodeld */ = {
