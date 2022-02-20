@@ -1,79 +1,36 @@
 //
-//  HomeViewController.swift
+//  DetailViewController.swift
 //  Movies
 //
-//  Created by Rosendo Vázquez on 18/02/22.
+//  Created by Rosendo Vázquez on 19/02/22.
 //
 
+import Foundation
 import UIKit
 import SnapKit
 
-class HomeViewController: UIViewController {
-
-    var presenter : ViewToPresenterProtocolHome?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        installView()
-        
-    }
-    
-    func installView(){
-        UIManager.customizeBar(vc: self, vcTitle: "Movies", leftBtnHidden: true)
-        view.backgroundColor = UIManager.BLUE_MAIN
-        
-        let searchBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self,                                           action: #selector(onSearchButtonClicked))
-        searchBarButtonItem.tintColor = UIManager.BASIC_WHITE
-        self.navigationItem.rightBarButtonItem  = searchBarButtonItem
-    }
-    
-    @objc func onSearchButtonClicked(_ sender: Any){
-        showContextualMenu()
-    }
-    
-    
-    func showContextualMenu() {
-        let message = NSLocalizedString(UIManager.txtMsgLogout, comment: "")
-        let cancelButtonTitle = NSLocalizedString(UIManager.txtMsgCancel, comment: "")
-        let destructiveButtonTitle = NSLocalizedString(UIManager.txtLogout, comment: "")
-        let viewProfileTitle = NSLocalizedString(UIManager.txtViewProfile, comment: "")
-        
-        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
-        
-        // Create the actions.
-        let cancelAction = UIAlertAction(title: cancelButtonTitle, style: .cancel) { _ in
-        }
-        
-        let destructiveAction = UIAlertAction(title: viewProfileTitle, style: .default) { _ in
-            let vc = Profile()
-            vc.modalPresentationStyle = .popover
-            self.present(vc, animated: true, completion: nil)
-        }
-        
-        let destructiveAction1 = UIAlertAction(title: destructiveButtonTitle, style: .destructive) { _ in
-            guard let nc = self.navigationController else { return }
-            self.title = " "
-            self.presenter?.rToLogin(navigationController: nc)
-        }
-        
-        alertController.addAction(cancelAction)
-        alertController.addAction(destructiveAction)
-        alertController.addAction(destructiveAction1)
-       
-        present(alertController, animated: true, completion: nil)
-    }
-    
-    
-     
+public enum ViewType {
+    case Profile
+    case MovieInfo
+    case NoDefined
 }
 
-class Profile: UIViewController {
+class DetailViewController: UIViewController {
+    
+    //MARK: Vars
+    var tableView: UITableView?
+    var reusableTableView : ComponentDataSource!
+    var uiType:ViewType = .NoDefined
     
     //MARK: VIPER Elements
+    var presenter : ViewToPresenterProtocolDetail?
+   
     //MARK: UIElements
     lazy var lblTitle: UILabel = {
         let label = UILabel()
-        label.text = UIManager.titleProfile
+        label.text = (uiType == .Profile) ? UIManager.titleProfile :
+                     ((uiType == .MovieInfo) ? UIManager.titleMovieInfo : UIManager.titleInfo)
+        
         label.font = UIManager.RegularFont(20)
         label.textColor = UIManager.BASIC_WHITE
         label.textAlignment = .center
@@ -114,19 +71,43 @@ class Profile: UIViewController {
         iv.clipsToBounds = true
         iv.contentMode = .scaleAspectFit
         iv.layer.cornerRadius = UIManager.avatarCurve
-        iv.image = UIImage(named: "avatar")
+        iv.layer.borderWidth = 3
+        iv.layer.borderColor = UIManager.GREEN.cgColor
+        iv.image = UIManager.getImageFromUrl(url: "https://scontent.fmex36-1.fna.fbcdn.net/v/t39.30808-6/273123399_2405028076295152_6166771893846864269_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeFQUR5Kimaoh8kyYdvmc-qx9VWo6-pe5Zf1Vajr6l7ll0oGKSJfY6HBrr5eY6T9xixryPEsI6zXGpUUXZqfdlg3&_nc_ohc=7twVfdTrkekAX-wT0iw&_nc_ht=scontent.fmex36-1.fna&oh=00_AT899G5uzKnIe6wL8KeFqHqC_4nkAim7UbuTUN4olmu1qQ&oe=621743E4") //UIImage(named: "avatar")
         return iv
+    }()
+    
+    lazy var viewFavorites: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIManager.BLUE_BG_MAIN
+        return view
     }()
     
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIManager.DARK
+        view.backgroundColor = UIManager.BLUE_BG_MAIN
+        uiType = Constants.UI_TYPE
+        installTable()
         installView()
     }
     
     //MARK: Functions
-    func installView(){
+    func installTable()  {
+        tableView = UITableView()
+        tableView?.frame.origin.x = 0
+        tableView?.frame.origin.y = 0
+        tableView?.frame.size.width = view.frame.width
+        tableView?.frame.size.height = view.frame.width / 0.7
+        tableView?.backgroundColor = UIManager.BLUE_BG_MAIN
+        guard let vt = tableView else { return }
+        reusableTableView = ComponentDataSource(vt, 414, 414) //TODO: Send Model Fetched
+        reusableTableView.tableView.backgroundColor = UIManager.BLUE_BG_MAIN
+        viewFavorites.addSubview(reusableTableView.tableView)
+    }
+    
+    func installView()  {
+        
         view.addSubview(lblTitle)
         lblTitle.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(20)
@@ -163,12 +144,17 @@ class Profile: UIViewController {
             make.trailing.equalTo(-16)
         }
         
+        view.addSubview(viewFavorites)
+        viewFavorites.snp.makeConstraints { make in
+            make.top.equalTo(lblFavMovies.snp.bottom).offset(16)
+            make.bottom.equalToSuperview()
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
+        }
     }
-    
-    
-    
-    
-    
+
     //MARK: Actions
     
 }
+
+

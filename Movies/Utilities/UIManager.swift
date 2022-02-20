@@ -31,6 +31,8 @@ public struct UIManager {
     public static let txtMsgCancel = "Cancel"
     
     public static let titleProfile = "Profile"
+    public static let titleMovieInfo = "Movie + 🍿"
+    public static let titleInfo = "Settings"
     public static let userRealName = "Hello!"
     public static let userName = "@Rosenvb"
     public static let txtMovieFavTitle = "Favorites"
@@ -38,12 +40,15 @@ public struct UIManager {
     
     //MARK: - Colors -
     public static let BLUE_MAIN = #colorLiteral(red: 0.05098039216, green: 0.1450980392, blue: 0.2470588235, alpha: 1)
+    public static let BLUE_BORDER = #colorLiteral(red: 0.01724214607, green: 0.05068689133, blue: 0.08635179924, alpha: 1)
+    public static let BLUE_BG_MAIN = #colorLiteral(red: 0.03137254902, green: 0.0862745098, blue: 0.1490196078, alpha: 1)
     public static let GRAY_BASE = #colorLiteral(red: 0.03171499154, green: 0.09323284489, blue: 0.1588344381, alpha: 1)
     public static let DARK = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     public static let BLUE_SECONDARY = #colorLiteral(red: 0.003921568627, green: 0.7058823529, blue: 0.8941176471, alpha: 1)
     public static let GREEN = #colorLiteral(red: 0.5647058824, green: 0.8078431373, blue: 0.631372549, alpha: 1)
     public static let BASIC_WHITE = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     public static let BASIC_SOFT_DARK = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1585523593)
+    public static let MEDIUM_SOFT_DARK = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7975734685)
     
     public static func RegularFont(_ ofSize: CGFloat) -> UIFont {
         return UIFont(name: "Manrope", size: ofSize) ?? UIFont.systemFont(ofSize: ofSize, weight: .regular)
@@ -61,6 +66,15 @@ public struct UIManager {
         vc.title = vcTitle
         vc.navigationController?.navigationBar.standardAppearance = appearance
         vc.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    }
+    
+    public static func getImageFromUrl(url:String) -> UIImage {
+        lazy var blankImg = UIImage(systemName: "camera.viewfinder") ?? UIImage()
+        guard let imageUrl = URL(string: url),
+              let imageData = try? Data(contentsOf: imageUrl),
+              let image = UIImage(data: imageData) else { return blankImg }
+        
+        return image
     }
     
     

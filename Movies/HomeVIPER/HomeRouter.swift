@@ -8,6 +8,7 @@
 import UIKit
 
 class HomeRouter: PresenterToRouterProtocolHome {
+    
     static func createModule() -> HomeViewController {
         let view = HomeViewController(nibName: nil, bundle: nil)
         let presenter :ViewToPresenterProtocolHome & InteractorToPresenterProtocolHome = HomePresenter()
@@ -26,9 +27,16 @@ class HomeRouter: PresenterToRouterProtocolHome {
     
     func routeToLogin(navigationController: UINavigationController) {
         let vc = LoginRouter.createModule()
+        vc.modalTransitionStyle = .coverVertical
+        vc.modalPresentationStyle = .fullScreen
         navigationController.pushViewController(vc, animated: true)
     }
-    
+        
+    func routeToProfile(navigationController: UINavigationController) {
+        let vc = DetailRouter.createModule()
+        vc.modalTransitionStyle = .coverVertical
+        navigationController.present(vc, animated: true, completion: nil)
+    }
      
 }
 

@@ -11,6 +11,7 @@ import UIKit
 protocol PresenterToRouterProtocolHome: AnyObject {
     static func createModule() -> HomeViewController
     func routeToLogin(navigationController:UINavigationController)
+    func routeToProfile(navigationController:UINavigationController)
 }
 
 //MARK: Presenter -
@@ -20,7 +21,7 @@ protocol ViewToPresenterProtocolHome: AnyObject {
     var router:PresenterToRouterProtocolHome? {get set}
      
     func rToLogin(navigationController:UINavigationController)
-    
+    func rToProfile(navigationController:UINavigationController)
 }
 
 //MARK: Interactor -

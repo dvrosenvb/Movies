@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        loadData()
         return true
     }
 
@@ -77,6 +78,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    func loadData() {
+        guard let BURL = Bundle.main.infoDictionary?["IMG_URL"] as? String,
+              let BIMG = Bundle.main.infoDictionary?["BASE_URL"] as? String,
+              let APIK = Bundle.main.infoDictionary?["API_KEY"] as? String
+        else {
+            fatalError("Couldn't find values")
+        }
+        
+        Constants.API_KEY = APIK
+        Constants.URL_BASE = BURL
+        Constants.URL_IMAGE = BIMG
+        
     }
 
 }

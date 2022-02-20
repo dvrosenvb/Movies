@@ -8,14 +8,18 @@
 import UIKit
 
 class HomePresenter: ViewToPresenterProtocolHome {
-    func rToLogin(navigationController:UINavigationController) {
-        router?.routeToLogin(navigationController: navigationController)
-    }
-    
-    
+
     var view:PresenterToViewProtocolHome?
     var interactor: PresenterToInteractorProtocol?
     var router: PresenterToRouterProtocolHome?
+    
+    
+    func rToLogin(navigationController:UINavigationController) {
+        router?.routeToLogin(navigationController: navigationController)
+    }
+    func rToProfile(navigationController: UINavigationController) {
+        router?.routeToProfile(navigationController: navigationController)
+    }
     
 }
 

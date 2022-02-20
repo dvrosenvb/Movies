@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
         tf.keyboardType = .emailAddress
         tf.returnKeyType = .next
         tf.placeholder = UIManager.txtPlaceholderUserName
-        
+        tf.text = "rosenvb@gmail.com"
         return tf
     }()
     
@@ -77,7 +77,7 @@ class LoginViewController: UIViewController {
         tf.font = UIManager.RegularFont(18)
         tf.returnKeyType = .next
         tf.placeholder = UIManager.txtPlaceholderPassword
-        
+        tf.text = "&Movies2022"
         return tf
     }()
     
@@ -251,7 +251,7 @@ extension LoginViewController:PresenterToViewProtocolLogin{
     func loginFailed(info: String) {
         removeLoader()
         lblStatus.text = info
-        tfPassword.text = ""
+        tfPassword.text = "rosenvb@gmail.com"
         tfUserName.text = ""
     }
     
