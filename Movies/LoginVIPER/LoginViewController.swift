@@ -249,7 +249,7 @@ extension LoginViewController:PresenterToViewProtocolLogin{
     func loginFailed(info: String) {
         removeLoader()
         lblStatus.text = info
-        tfPassword.text = "rosenvb@gmail.com"
+        tfPassword.text = ""
         tfUserName.text = ""
     }
     
