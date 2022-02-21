@@ -62,9 +62,6 @@ class ComponentDataSource: NSObject, UITableViewDataSource, UITableViewDelegate 
 extension ComponentDataSource:CollectionTableViewCellDelegate{
     func collectionTableViewCellItemTapped(model: ItemCollectionViewCellModel) {
         Constants.UI_TYPE = .MovieInfo
-        print("Tapped: \(model.original_title)")
-        print(Constants.URL_IMAGE)
-        print(Constants.URL_BASE)
         tapped(model: model)
     }
 }

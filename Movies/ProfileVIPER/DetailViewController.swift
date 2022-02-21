@@ -169,7 +169,7 @@ open class DetailViewController: UIViewController {
         let btn = UIButton()
         btn.setImage(UIImage(systemName: "heart"), for: .normal)
         btn.tintColor = UIManager.BASIC_WHITE
-        btn.layer.cornerRadius = 15
+        btn.layer.cornerRadius = 18
         btn.layer.backgroundColor = UIManager.MEDIUM_SOFT_DARK.cgColor
         return btn
     }()
@@ -325,8 +325,8 @@ open class DetailViewController: UIViewController {
             btnAddFavorites.snp.makeConstraints { make in
                 make.top.equalToSuperview().offset(10)
                 make.trailing.equalToSuperview().offset(-10)
-                make.height.equalTo(30)
-                make.width.equalTo(35)
+                make.height.equalTo(36)
+                make.width.equalTo(36)
             }
             
             ivRankingMovie.layer.cornerRadius = UIManager.cornerRadiusBtn - 2

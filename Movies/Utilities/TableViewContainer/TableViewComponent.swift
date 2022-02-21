@@ -59,8 +59,7 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
 
 extension TableViewViewController:CollectionTableViewCellDelegate{
     func collectionTableViewCellItemTapped(model: ItemCollectionViewCellModel) {
-        print("Tapped: \(model.original_title)")
-        
+       
     }
     
     
