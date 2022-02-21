@@ -23,12 +23,12 @@ protocol ViewToPresenterProtocolDetail: AnyObject {
 
 //MARK: Interactor -
 protocol InteractorToPresenterProtocolDetail: AnyObject {
- 
+    
 }
 
 //MARK: View -
 protocol PresenterToViewProtocolDetail: AnyObject {
- 
+    
 }
 
 //MARK: PresenterToInteractorProtocol

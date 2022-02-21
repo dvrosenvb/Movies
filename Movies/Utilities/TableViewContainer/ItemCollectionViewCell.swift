@@ -8,7 +8,18 @@
 import UIKit
 import SnapKit
 
-struct ItemCollectionViewCellModel {
+public struct ItemCollectionViewCellModel {
+    let id:Int
+    let original_title:String
+    let image:String
+    let overview:String
+    let release_date:String
+    let vote_average:Double
+    let vote_count:Int
+}
+
+public struct ItemCollectionViewCellModelCodable:Codable {
+    let id:Int
     let original_title:String
     let image:String
     let overview:String
@@ -47,7 +58,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
             iv.clipsToBounds = true
             iv.contentMode = .scaleAspectFill
             iv.layer.cornerRadius = UIManager.cornerRadiusBtn
-            iv.image = UIImage(named: "headImage")
+            iv.image = UIManager.getImageFromUrl(url: model.image)
             return iv
         }()
         

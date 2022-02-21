@@ -10,13 +10,15 @@ import UIKit
 class HomeRouter: PresenterToRouterProtocolHome {
     
     static func createModule() -> HomeViewController {
+        
+        let netService = DefaultNetworkService()
         let view = HomeViewController(nibName: nil, bundle: nil)
         let presenter :ViewToPresenterProtocolHome & InteractorToPresenterProtocolHome = HomePresenter()
-        let interactor : PresenterToInteractorProtocol = HomeInteractor()
+        let interactor : PresenterToInteractorProtocol = HomeInteractor(networkService: netService)
         let router:PresenterToRouterProtocolHome = HomeRouter()
         
         view.presenter = presenter
-        presenter.view = view as? PresenterToViewProtocolHome
+        presenter.view = view as PresenterToViewProtocolHome
         presenter.router = router
         presenter.interactor = interactor
         interactor.presenter = presenter
@@ -32,10 +34,25 @@ class HomeRouter: PresenterToRouterProtocolHome {
         navigationController.pushViewController(vc, animated: true)
     }
         
-    func routeToProfile(navigationController: UINavigationController) {
-        let vc = DetailRouter.createModule()
-        vc.modalTransitionStyle = .coverVertical
-        navigationController.present(vc, animated: true, completion: nil)
+    func routeToProfile(navigationController: UINavigationController, _ model:ItemCollectionViewCellModel) {
+        switch Constants.UI_TYPE{
+            case .Profile:
+                let vc = DetailRouter.createModule()
+                Constants.UI_TYPE = .Profile
+                vc.installView(model)
+                vc.modalTransitionStyle = .coverVertical
+                navigationController.present(vc, animated: true, completion: nil)
+            
+            case .MovieInfo:
+                let vc = DetailRouter.createModule()
+                vc.installView(model)
+                vc.modalTransitionStyle = .coverVertical
+                navigationController.present(vc, animated: true, completion: nil)
+            
+            case .NoDefined:break
+            
+        }
+    
     }
      
 }

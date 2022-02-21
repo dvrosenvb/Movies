@@ -16,7 +16,7 @@ class DetailRouter: PresenterToRouterProtocolDetail {
         let router:PresenterToRouterProtocolDetail = DetailRouter()
         
         view.presenter = presenter
-        presenter.view = view as? PresenterToViewProtocolDetail
+        presenter.view = view as PresenterToViewProtocolDetail
         presenter.router = router
         presenter.interactor = interactor
         interactor.presenter = presenter

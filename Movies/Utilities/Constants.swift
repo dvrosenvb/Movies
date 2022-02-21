@@ -15,5 +15,9 @@ public class Constants {
     public static var URL_IMAGE = ""
     public static var API_KEY = ""
     
+    //MARK: Path/s
+    public static let POPULAR_MOVIES = "movie/popular"
+    public static let SINGLE_MOVIE = "movie/"
+    public static var ID_MOVIE = 0
     public static var UI_TYPE:ViewType = .NoDefined
 }

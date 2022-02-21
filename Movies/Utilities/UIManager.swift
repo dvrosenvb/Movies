@@ -36,7 +36,10 @@ public struct UIManager {
     public static let userRealName = "Hello!"
     public static let userName = "@Rosenvb"
     public static let txtMovieFavTitle = "Favorites"
+    public static let production_companies = "Production Companies"
     public static let txtLoginError = "Invalid username or password. Try again"
+    public static let imgDummy = "https://image.tmdb.org/t/p/w500/nw4kyc29QRpNtFbdsBHkRSFavvt.png"
+    public static let imgDummyBase = "https://image.tmdb.org/t/p/w500"
     
     //MARK: - Colors -
     public static let BLUE_MAIN = #colorLiteral(red: 0.05098039216, green: 0.1450980392, blue: 0.2470588235, alpha: 1)
@@ -77,5 +80,34 @@ public struct UIManager {
         return image
     }
     
+    public static func getRate(_ str:String) -> String{
+        var rate = ""
+        var i = 0
+        for character in str{
+            if i < 3{
+                rate = rate + String(character)
+            }
+            i += 1
+        }
+        
+        return rate
+    }
+    
+    
+    public static func setGradient(_ view:UIView){
+        lazy var gradient: CAGradientLayer = {
+            let gradient = CAGradientLayer()
+            gradient.type = .axial
+            gradient.colors = [
+                UIColor.red.cgColor,
+                UIColor.blue.cgColor
+            ]
+            gradient.locations = [0, 0.25]
+            return gradient
+        }()
+
+        gradient.frame = view.bounds
+        view.layer.insertSublayer(gradient, at: 0)
+    }
     
 }

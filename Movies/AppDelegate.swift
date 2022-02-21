@@ -81,8 +81,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func loadData() {
-        guard let BURL = Bundle.main.infoDictionary?["IMG_URL"] as? String,
-              let BIMG = Bundle.main.infoDictionary?["BASE_URL"] as? String,
+        guard let BURL = Bundle.main.infoDictionary?["BASE_URL"] as? String,
+              let BIMG = Bundle.main.infoDictionary?["IMG_URL"] as? String,
               let APIK = Bundle.main.infoDictionary?["API_KEY"] as? String
         else {
             fatalError("Couldn't find values")

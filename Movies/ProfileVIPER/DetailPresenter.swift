@@ -8,15 +8,13 @@
 import UIKit
 
 class DetailPresenter: ViewToPresenterProtocolDetail {
-    
     var view:PresenterToViewProtocolDetail?
     var interactor: PresenterToInteractorProtocolDetail?
     var router: PresenterToRouterProtocolDetail?
-    
 }
 
 extension DetailPresenter:InteractorToPresenterProtocolDetail{
-     
+    
 }
 
 

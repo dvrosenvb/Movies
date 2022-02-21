@@ -11,6 +11,10 @@ struct CollectionTableViewCellModel {
     let data:[ItemCollectionViewCellModel]
 }
 
+struct CollectionTableViewCellModelCodable:Codable {
+    var data:[ItemCollectionViewCellModelCodable]
+}
+
 protocol CollectionTableViewCellDelegate:AnyObject {
     func collectionTableViewCellItemTapped(model:ItemCollectionViewCellModel)
 }

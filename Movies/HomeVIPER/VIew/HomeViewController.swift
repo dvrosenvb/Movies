@@ -18,22 +18,24 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         installView()
-        installTable()
-        
+        presenter?.fetchAllMovies()
     }
     
     override func viewDidLayoutSubviews() {
        
     }
     
-    func installTable()  {
-        tableView = UITableView()
-        tableView?.frame = view.bounds
-        tableView?.backgroundColor = UIManager.BLUE_MAIN
-        guard let vt = tableView else { return }
-        reusableTableView = ComponentDataSource(vt, view.frame.size.width, view.frame.size.height)
-        reusableTableView.delegate = self
-        view.addSubview(reusableTableView.tableView)
+    func installTable(model:[CollectionTableViewCellModel])  {
+        
+        DispatchQueue.main.async {
+            self.tableView = UITableView()
+            self.tableView?.frame = self.view.bounds
+            self.tableView?.backgroundColor = UIManager.BLUE_BG_MAIN
+            guard let vt = self.tableView else { return }
+            self.reusableTableView = ComponentDataSource(vt, self.view.frame.size.width, self.view.frame.size.height, model)
+            self.reusableTableView.delegate = self
+            self.view.addSubview(self.reusableTableView.tableView)
+        }
     }
     
     func installView(){
@@ -62,9 +64,11 @@ class HomeViewController: UIViewController {
         }
         
         let destructiveAction = UIAlertAction(title: viewProfileTitle, style: .default) { _ in
+            let modelEmpty = ItemCollectionViewCellModel(id: 0, original_title: "", image: "", overview: "", release_date: "", vote_average: 0, vote_count: 0)
             guard let nc = self.navigationController else { return }
             Constants.UI_TYPE = .Profile
-            self.presenter?.rToProfile(navigationController: nc)
+            self.presenter?.rToProfile(navigationController: nc, modelEmpty)
+            
         }
         
         let destructiveAction1 = UIAlertAction(title: destructiveButtonTitle, style: .destructive) { _ in
@@ -87,7 +91,37 @@ extension HomeViewController:ComponentDataSourceProtocol{
     func elementTapped(model: ItemCollectionViewCellModel) {
         guard let nc = self.navigationController else { return }
         Constants.UI_TYPE = .MovieInfo
-        presenter?.rToProfile(navigationController: nc)
+        presenter?.rToProfile(navigationController: nc, model)
+        
+    }
+}
+
+extension HomeViewController:PresenterToViewProtocolHome{
+    func loadCollection(movies: [Movie]) {
+        var item:[ItemCollectionViewCellModel] = []
+        var collection:[CollectionTableViewCellModel] = []
+        var row = 1
+        for movie in movies {
+            item.append(ItemCollectionViewCellModel.init(id: movie.id, original_title: movie.title, image: movie.posterURL, overview: movie.overview,
+                                                         release_date: movie.releaseDate, vote_average: Double(movie.voteAverage), vote_count: movie.voteCount))
+            if ((row % 5) == 0) {
+                collection.append(CollectionTableViewCellModel(data: item))
+                item.removeAll()
+            }
+            
+            row = row + 1
+        }
+                
+        installTable(model: collection)
+        
+    }
+    
+    func showErrorAllMovies() {
+        print("Some error happens [ALL]")
+    }
+    
+    func showErrorSingleMovie() {
+        print("Some error happens [SINGLE MOVIE]")
     }
     
     
