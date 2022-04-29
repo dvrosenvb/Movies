@@ -9,3 +9,11 @@
 
 
 Using: The Movie DB Information. 🚀 
+
+## Preview v.1.0
+![Alt Text](https://github.com/dvrosenvb/StuffMedia/blob/main/IMG_4753.gif)
+
+![Alt Text](https://raw.githubusercontent.com/dvrosenvb/StuffMedia/main/03.png)
+
+![Alt Text](https://raw.githubusercontent.com/dvrosenvb/StuffMedia/main/02.png)
+
