@@ -11,9 +11,11 @@
 Using: The Movie DB Information. 🚀 
 
 ## Preview v.1.0
-![Alt Text](https://github.com/dvrosenvb/StuffMedia/blob/main/IMG_4753.gif)
+<div style="float:left">
+  <img src="https://raw.githubusercontent.com/dvrosenvb/StuffMedia/main/03.png" alt="" width="220"/>&nbsp&nbsp&nbsp
+  <img src="https://raw.githubusercontent.com/dvrosenvb/StuffMedia/main/02.png" alt="" width="220"/>&nbsp&nbsp&nbsp
+  <img src="https://github.com/dvrosenvb/StuffMedia/blob/main/IMG_4753.gif" alt="" width="220"/>
+</div>
 
-![Alt Text](https://raw.githubusercontent.com/dvrosenvb/StuffMedia/main/03.png)
 
-![Alt Text](https://raw.githubusercontent.com/dvrosenvb/StuffMedia/main/02.png)
 
